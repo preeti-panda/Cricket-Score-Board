@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Score Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">    
+</head>
+<body>
+    <div class="container">
+        <h1>Cricket Score Management</h1>
+
+        <form action="/cgi-bin/main.cgi" method="post">
+            <div class="form-container">
+                <h2>Enter Team Details</h2>
+                <label for="team">Team Name:</label>
+                <input type="text" name="team" id="team" placeholder="Enter team name" required>
+
+                <h2>Enter Batsman Details</h2>
+                <label for="batsman-name">Batsman Name:</label>
+                <input type="text" name="batsman_name" id="batsman-name" placeholder="Enter batsman name" required>
+                <label for="ones">Ones:</label>
+                <input type="number" name="ones" id="ones" placeholder="Enter ones" required>
+                <label for="fours">Fours:</label>
+                <input type="number" name="fours" id="fours" placeholder="Enter fours" required>
+                <label for="sixes">Sixes:</label>
+                <input type="number" name="sixes" id="sixes" placeholder="Enter sixes" required>
+                <label for="balls">Balls Played:</label>
+                <input type="number" name="balls" id="balls" placeholder="Enter balls played" required>
+
+                <h2>Enter Bowler Details</h2>
+                <label for="bowler-name">Bowler Name:</label>
+                <input type="text" name="bowler_name" id="bowler-name" placeholder="Enter bowler name" required>
+                <label for="runs-given">Runs Given:</label>
+                <input type="number" name="runs_given" id="runs-given" placeholder="Enter runs given" required>
+                <label for="overs">Overs Bowled:</label>
+                <input type="number" name="overs" id="overs" placeholder="Enter overs bowled" required>
+                <label for="wickets">Wickets Taken:</label>
+                <input type="number" name="wickets" id="wickets" placeholder="Enter wickets taken" required>
+                
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+
+        <form action="/submit_score" method="post">
+            <label>Team 1 Runs:</label>
+            <input type="number" name="runs_team1" required>
+            <label>Team 2 Runs:</label>
+            <input type="number" name="runs_team2" required>
+            <button type="submit">Submit</button>
+        </form>
+        
+
+        <div class="output">
+            <h2>Match Summary</h2>
+            <p id="summary"></p>
+        </div>
+    </div>
+</body>
+</html>
